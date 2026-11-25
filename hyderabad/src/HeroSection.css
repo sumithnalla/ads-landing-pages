@@ -1,0 +1,318 @@
+.hero-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  background: #001529;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  z-index: 1;
+}
+
+.hero-bg.active { 
+  opacity: 1; 
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+  padding: 40px 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(233, 30, 99, 0.2);
+  color: #e91e63;
+  padding: 16px 32px;
+  border-radius: 70px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  border: 2px solid rgba(233, 30, 99, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+.hero-title { 
+  font-size: 4rem; 
+  line-height: 1.1;
+  margin-bottom: 1.5rem; 
+  font-weight: 800; 
+  letter-spacing: -1px;
+}
+
+.hero-subtitle { 
+  font-size: 1.4rem; 
+  margin-bottom: 2.5rem; 
+  opacity: 0.9;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.hero-features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.h-feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.h-feature svg {
+  color: #e91e63;
+}
+
+.hero-btns { 
+  display: flex; 
+  gap: 20px; 
+  justify-content: center; 
+}
+
+.btn {
+  padding: 16px 36px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-primary { 
+  background: #e91e63; 
+  color: white; 
+  border: none; 
+  box-shadow: 0 10px 20px rgba(233, 30, 99, 0.3);
+}
+
+.btn-primary:hover { 
+  background: #c2185b; 
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(233, 30, 99, 0.4);
+}
+
+.btn-outline { 
+  background: rgba(255, 255, 255, 0.1); 
+  color: white; 
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+  backdrop-filter: blur(10px);
+}
+
+.btn-outline:hover { 
+  background: white; 
+  color: #001529; 
+  transform: translateY(-2px);
+}
+
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.hero-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px 40px;
+  z-index: 100;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.text-logo {
+  font-size: clamp(16px, 5vw, 24px);
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  background: radial-gradient(
+    circle at top left,
+    #CFF6EA 0%,
+    #9FE7DD 35%,
+    #5ED0CF 65%,
+    #2FA4C9 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  white-space: nowrap;
+}
+
+/* Desktop and larger screens */
+@media (min-width: 769px) {
+  .hero-nav {
+    padding: 25px 40px;
+  }
+  
+  .text-logo {
+    font-size: 24px;
+  }
+}
+
+/* Tablets and landscape phones */
+@media (min-width: 481px) and (max-width: 768px) {
+  .hero-nav {
+    padding: 20px 30px;
+  }
+  
+  .text-logo {
+    font-size: clamp(18px, 4.5vw, 22px);
+  }
+  
+  .hero-title { 
+    font-size: 2.8rem; 
+  }
+  
+  .hero-subtitle { 
+    font-size: 1.1rem; 
+  }
+  
+  .hero-btns { 
+    flex-direction: column; 
+    width: 100%; 
+    max-width: 300px; 
+    margin: 0 auto; 
+  }
+  
+  .btn { 
+    width: 100%; 
+    justify-content: center; 
+  }
+  
+  .hero-features { 
+    gap: 15px; 
+  }
+}
+
+/* Modern smartphones (OnePlus Nord 3, iPhone 14 Pro Max, etc.) */
+@media (min-width: 390px) and (max-width: 480px) {
+  .hero-nav {
+    padding: 18px 25px;
+  }
+  
+  .text-logo {
+    font-size: 19px;
+  }
+  
+  .hero-title { 
+    font-size: 2.5rem; 
+  }
+  
+  .hero-subtitle { 
+    font-size: 1.05rem; 
+  }
+  
+  .hero-btns { 
+    flex-direction: column; 
+    width: 100%; 
+    max-width: 300px; 
+    margin: 0 auto; 
+  }
+  
+  .btn { 
+    width: 100%; 
+    justify-content: center; 
+  }
+  
+  .hero-features { 
+    gap: 15px; 
+  }
+}
+
+/* Smaller phones */
+@media (max-width: 389px) {
+  .hero-nav {
+    padding: 15px 20px;
+  }
+  
+  .text-logo {
+    font-size: clamp(14px, 4vw, 17px);
+    letter-spacing: 0.5px;
+  }
+  
+  .hero-title { 
+    font-size: 2.2rem; 
+  }
+  
+  .hero-subtitle { 
+    font-size: 1rem; 
+  }
+  
+  .hero-badge {
+    font-size: 1.1rem;
+    padding: 12px 24px;
+  }
+  
+  .hero-btns { 
+    flex-direction: column; 
+    width: 100%; 
+    max-width: 280px; 
+    margin: 0 auto; 
+  }
+  
+  .btn { 
+    width: 100%; 
+    justify-content: center;
+    padding: 14px 28px;
+    font-size: 1rem;
+  }
+  
+  .hero-features { 
+    gap: 12px; 
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .hero-nav {
+    padding: 12px 15px;
+  }
+  
+  .text-logo {
+    font-size: clamp(13px, 3.8vw, 16px);
+    letter-spacing: 0.3px;
+  }
+  
+  .hero-title { 
+    font-size: 2rem; 
+  }
+  
+  .hero-subtitle { 
+    font-size: 0.95rem; 
+  }
+}
